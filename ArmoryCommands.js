@@ -13,7 +13,7 @@ module.exports.gitlist = (args, message, limit, displaylimit) => {
   allArgs = allArgs.trim(); //strip any leading or trailing spaces
 
   if (allArgs === '') {
-    message.reply('Command requires a parameter'); //if the user does !git <space> or !git, return and reply this.
+    message.reply('명령어 뒤에 매개변수가 없습니다.'); //if the user does !git <space> or !git, return and reply this.
     return;
   }
 
@@ -29,11 +29,11 @@ module.exports.gitlist = (args, message, limit, displaylimit) => {
   });
 
   if (matchingUnits.length === 0) {
-    message.reply('No units matched with the name ' + allArgs);
+    message.reply('검색과 일치하는 이름의 유닛이 없습니다. ' + allArgs);
   }
 
   if (matchingUnits.length > limit) {
-    message.reply(allArgs.toUpperCase() + ' is included in ' + matchingUnits.length + ' units, please be more specific or use !gitspec (or !getspec) ');
+    message.reply(allArgs.toUpperCase() + '은(는) ' + matchingUnits.length + ' 에 포함되어 있습니다. 단위를 더 구체적으로 지정하거나 !gitspec (또는 !getspec)을 사용하십시오. ');
     if (matchingUnits.length < displaylimit) {
       i = matchingUnits[0];
       if (matchingUnits.length < 50) {
@@ -49,7 +49,7 @@ module.exports.gitlist = (args, message, limit, displaylimit) => {
       return;
 
     } else if (matchingUnits.length > displaylimit) {
-      message.reply('Too many matching units to display list');
+      message.reply('검색과 일치하는 유닛이 너무 많습니다.');
       return;
 
 
@@ -103,7 +103,7 @@ module.exports.git = (args, message, limit, displaylimit) => {
   allArgs = allArgs.replace(/^\s+|\s+$/g, ''); //strip any leading or trailing spaces
 
   if (allArgs === '') {
-    message.reply('Command requires a parameter'); //if the user does !git <space> or !git, return and reply this.
+    message.reply('명령어 뒤에 매개변수가 없습니다.'); //if the user does !git <space> or !git, return and reply this.
     return;
   }
 
@@ -117,12 +117,12 @@ module.exports.git = (args, message, limit, displaylimit) => {
     }
   });
   if (matchingUnits5.length === 0) {
-    message.reply('No units matched with the name ' + allArgs);
+    message.reply('검색과 일치하는 이름의 유닛이 없습니다. ' + allArgs);
     return;
   }
 
   if (matchingUnits5.length > 10) {
-    message.reply('Too many units to display paging');
+    message.reply('검색과 일치하는 유닛이 너무 많습니다.');
     return;
   }
 
@@ -198,7 +198,7 @@ module.exports.gitpm = (args, message) => {
   allArgs = allArgs.trim(); //strip any leading or trailing spaces
 
   if (allArgs === '') {
-    message.reply('Command requires a parameter'); //if the user does !git <space> or !git, return and reply this.
+    message.reply('명령어 뒤에 매개변수가 없습니다.'); //if the user does !git <space> or !git, return and reply this.
     return;
   }
 
@@ -213,7 +213,7 @@ module.exports.gitpm = (args, message) => {
   });
 
   if (matchingUnits3.length === 0) {
-    message.reply('No units matched with the name ' + allArgs);
+    message.reply('검색과 일치하는 이름의 유닛이 없습니다. ' + allArgs);
   }
 
 
@@ -258,7 +258,7 @@ module.exports.gitspec = (args, message, limit, displaylimit) => {
   allArgs = allArgs.replace(/^\s+|\s+$/g, ''); //strip any leading or trailing spaces
 
   if (allArgs === '') {
-    message.reply('Command requires a parameter'); //if the user does !git <space> or !git, return and reply this.
+    message.reply('명령어 뒤에 매개변수가 없습니다.'); //if the user does !git <space> or !git, return and reply this.
     return;
   }
 
@@ -337,7 +337,7 @@ module.exports.list = (args, message, displaylimit) => {
   allArgs = allArgs.trim(); //strip any leading or trailing spaces
 
   if (allArgs === '') {
-    message.reply('Command requires a parameter'); //if the user does !git <space> or !git, return and reply this.
+    message.reply('명령어 뒤에 매개변수가 없습니다.'); //if the user does !git <space> or !git, return and reply this.
     return;
   }
 
@@ -415,7 +415,7 @@ module.exports.ke = (args, message, heatdata) => {
 module.exports.ketable = (args, message) => {
   let title;
   if(isNaN(args[0]) === true || args[0] > 30 || args[0] < 1) {
-    message.reply('Please use a valid KE value between 1 and 30').catch(err => { console.log(err);});
+    message.reply('1에서 30사이의 KE값을 입력 해주세요.').catch(err => { console.log(err);});
     return;
   }
 
@@ -446,7 +446,7 @@ module.exports.ketable = (args, message) => {
 module.exports.heattable = (args, message) => {
   let title;
   if(isNaN(args[0]) === true || args[0] > 30 || args[0] < 1) {
-    message.reply('Please use a valid HEAT value between 1 and 30').catch(err => { console.log(err);});
+    message.reply('1에서 30사이의 HEAT값을 입력 해주세요').catch(err => { console.log(err);});
     return;
   }
 
