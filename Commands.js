@@ -204,7 +204,7 @@ module.exports.botcommands = (client, admin) => {
               "Conquete 2x3 Gangjin":"진흙탕 싸움",
               "Conquete 2x3 Hwaseong":"핵겨울",
               "Conquete 3x3 Muju":"푸룬징 벨리",
-              "Conquete 2x3 Tohoku Alt":"논 밭",
+              "Conquete 2x3 Tohoku Alt":"논밭",
               "Conquete 3x3 Muju Alt":"펀치볼",
               "Conquete 3x3 Marine 3 Reduite Terrestre":"임박한 지옥의 묵시룩",
               "Conquete 3x3 Highway Small":"1번 국도"
