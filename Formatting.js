@@ -408,7 +408,7 @@ module.exports.formatting = (i) => {
     }
 
     category = ('**항공기** | **국가**: ' + i.MotherCountry + ' | ' + proto);
-    movement = ('**이동수단**', '**유형**: ' + i.MovementType + ' | **Speed**: ' + Math.trunc(i.MaxSpeed) + 'kph | **Stealth**: ' + i.Stealth + ' \n **Air Optics**: ' + i.OpticalStrengthAir);
+    movement = ('**이동수단**', '**유형**: ' + i.MovementType + ' | **속도**: ' + Math.trunc(i.MaxSpeed) + 'kph | **스텔스**: ' + i.Stealth + ' \n **항공탐지**: ' + i.OpticalStrengthAir);
     if (i.Weapon1Caliber == 'Antiradar' || i.Weapon2Caliber == 'Antiradar' || i.Weapon3Caliber == 'Antiradar') {
       title = title + ' <:nato_sead:583815605124202507>';
     }
@@ -444,28 +444,28 @@ module.exports.formatting = (i) => {
   }
   description = description + ' | **채력**: ' + i.Strength;
 
-  weapon1 = weapon1 + (' | **안정장치**: ' + Math.trunc(i.Weapon1HitProbabilityWhileMoving * 100) + '%');
-  weapon2 = weapon2 + (' | **안정장치**: ' + Math.trunc(i.Weapon2HitProbabilityWhileMoving * 100) + '%');
-  weapon3 = weapon3 + (' | **안정장치**: ' + Math.trunc(i.Weapon3HitProbabilityWhileMoving * 100) + '%');
+  weapon1 = weapon1 + (' | **안정장치 **: ' + Math.trunc(i.Weapon1HitProbabilityWhileMoving * 100) + '%');
+  weapon2 = weapon2 + (' | **안정장치 **: ' + Math.trunc(i.Weapon2HitProbabilityWhileMoving * 100) + '%');
+  weapon3 = weapon3 + (' | **안정장치 **: ' + Math.trunc(i.Weapon3HitProbabilityWhileMoving * 100) + '%');
 
   if(i.Weapon1Type == 'Howitzer' || i.Weapon1Type == 'MLRS') {
-    weapon1 = weapon1 + (' | **조준시간** : ' + i.Weapon1AimTime);
+    weapon1 = weapon1 + (' | **조준시간 ** : ' + i.Weapon1AimTime);
   }
   if(i.Weapon2Type == 'Howitzer' || i.Weapon2Type == 'MLRS') {
-    weapon2 = weapon2 + (' | **조준시간** : ' + i.Weapon2AimTime);
+    weapon2 = weapon2 + (' | **조준시간 ** : ' + i.Weapon2AimTime);
   }
 
   if(i.Weapon1MissileMaxSpeed !== '') {
-    weapon1 = weapon1 + (' | **미사일 속도**: ' + i.Weapon1MissileMaxSpeed);
+    weapon1 = weapon1 + (' | **미사일 속도 **: ' + i.Weapon1MissileMaxSpeed);
   }
   if(i.Weapon2MissileMaxSpeed !== '') {
-    weapon2 = weapon2 + (' | **미사일 속도**: ' + i.Weapon2MissileMaxSpeed);
+    weapon2 = weapon2 + (' | **미사일 속도 **: ' + i.Weapon2MissileMaxSpeed);
   }
   if(i.Weapon3MissileMaxSpeed !== '') {
-    weapon3 = weapon3 + (' | **미사일 속도**: ' + i.Weapon3MissileMaxSpeed);
+    weapon3 = weapon3 + (' | **미사일 속도 **: ' + i.Weapon3MissileMaxSpeed);
   }
 
-  category = category + (' \n **Spec decks**: ' + i.Decks);
+  category = category + (' \n **가용되는 특성화 **: ' + i.Decks);
   const embed = new Discord.RichEmbed()
 
     .setTitle(title)
