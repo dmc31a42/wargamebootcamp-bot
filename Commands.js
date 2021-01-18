@@ -193,21 +193,21 @@ module.exports.botcommands = (client, admin) => {
           json.game.Map = json.game.Map.replace(/\_/g, ' ');
 
           const income = {
-              "1":"Very Low -40%",
-              "2":"Low - 20%",
-              "3":"Normal -0%",
-              "4":"High +20%",
-              "5":"Very High +40%"
+              "1":"아주 낮음 -40%",
+              "2":"낮음 - 20%",
+              "3":"보통 -0%",
+              "4":"높음 +20%",
+              "5":"아주 높음 +40%"
           }
           
           const map = {
-              "Conquete 2x3 Gangjin":"Mud Fight",
-              "Conquete 2x3 Hwaseong":"Nuclear Winter",
-              "Conquete 3x3 Muju":"Plunjing Valley",
-              "Conquete 2x3 Tohoku Alt":"Paddy Field",
-              "Conquete 3x3 Muju Alt":"Punchbowl",
-              "Conquete 3x3 Marine 3 Reduite Terrestre":"Hell in a very small place",
-              "Conquete 3x3 Highway Small":"Highway to Seoul"
+              "Conquete 2x3 Gangjin":"진흙탕 싸움",
+              "Conquete 2x3 Hwaseong":"핵겨울",
+              "Conquete 3x3 Muju":"푸룬징 벨리",
+              "Conquete 2x3 Tohoku Alt":"논밭",
+              "Conquete 3x3 Muju Alt":"펀치볼",
+              "Conquete 3x3 Marine 3 Reduite Terrestre":"임박한 지옥의 묵시룩",
+              "Conquete 3x3 Highway Small":"1번 국도"
           }
           if(map.hasOwnProperty(json.game.Map))
               json.game.Map = map[json.game.Map];
@@ -224,26 +224,26 @@ module.exports.botcommands = (client, admin) => {
           let embed = new Discord.RichEmbed()
               .setTitle(json.game.ServerName)
               .setDescription(
-               '\n **Map**: ' + json.game.Map + 
-               '\n **Starting Points**: ' + json.game.InitMoney +
-               '\n **Winning Points**: ' + json.game.ScoreLimit +
-               '\n **Game Duration**: ' + (json.game.TimeLimit / 60 + 'm') +
-               '\n **Income Rate**: ' + json.game.IncomeRate)
+               '\n **맵**: ' + json.game.Map + 
+               '\n **시작 점수**: ' + json.game.InitMoney +
+               '\n **승리 점수**: ' + json.game.ScoreLimit +
+               '\n **게임 시간**: ' + (json.game.TimeLimit / 60 + 'm') +
+               '\n **수입 비율**: ' + json.game.IncomeRate)
               .setColor('ORANGE')
               .addField(user1.PlayerName, ' **Level**: ' + user1.PlayerLevel + 
               '\n **Elo / Rank**: ' + user1.PlayerElo + ' | ' + user1.PlayerRank +
-              '\n **Deck**: ' + deck.decode(user1.PlayerDeckContent) + 
-              '\n **Deck Code**: ' + user1.PlayerDeckContent + 
-              '\n **Deck Name**: ' + user1.PlayerDeckName +
-              '\n **Team**: ' + (user1.PlayerAlliance - - 1), true);
+              '\n **덱**: ' + deck.decode(user1.PlayerDeckContent) + 
+              '\n **덱 코드**: ' + user1.PlayerDeckContent + 
+              '\n **덱 이름**: ' + user1.PlayerDeckName +
+              '\n **팀**: ' + (user1.PlayerAlliance - - 1), true);
               if(Object.values(json)[2] !== undefined) {
                   let user2 = Object.values(json)[2];
                   embed.addField(user2.PlayerName, ' **Level**: ' + user2.PlayerLevel + 
                       '\n **Elo / Rank**: ' + Math.round(user2.PlayerElo) + ' | ' + user2.PlayerRank +
-                      '\n **Deck**: ' + deck.decode(user2.PlayerDeckContent) + 
-                      '\n **Deck Code**: ' + user2.PlayerDeckContent + 
-                      '\n **Deck Name**: ' + user2.PlayerDeckName +
-                      '\n **Team**: ' + (user2.PlayerAlliance - - 1), true);
+                      '\n **덱**: ' + deck.decode(user2.PlayerDeckContent) + 
+                      '\n **덱 코드**: ' + user2.PlayerDeckContent + 
+                      '\n **덱 이름**: ' + user2.PlayerDeckName +
+                      '\n **팀**: ' + (user2.PlayerAlliance - - 1), true);
               }
               message.channel.send(embed);
               
