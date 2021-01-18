@@ -403,7 +403,7 @@ module.exports.formatting = (i) => {
     }
 
     description = ('**가격**: ' + i.Price);
-    if (i.Name === 'A10ATHUNDERBOLTII' || i.Name === 'SU25T') {
+    if (i.Name === 'A-10A THUNDERBOLT II' || i.Name === 'Su-25T') {
       description = ('**가격**: ' + i.Price + ' | **장갑: ** 전면: ' + armorfront + ' | 측면: ' + armorsides + ' | 후면: ' + armorrear + ' | 상면: ' + armortop);
     }
 
